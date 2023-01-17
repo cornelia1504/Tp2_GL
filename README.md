@@ -26,9 +26,9 @@ def fasta_read(fastafile):
                             " and column " + str(column_counter)+ " for sequence "+header[1:])
                             
     else : 
-        ("Error tjis is not a fasta file")
+        ("Error this is not a fasta file")
                     
 
 print(sys.argv)
 for arg in sys.argv[1:]:
-   fasta_read("/home/mahitasoa/Bureau/Prgrammation/PROJET_PYTHON/AFO/essai.fasta")
+   fasta_read(arv)
