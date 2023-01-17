@@ -30,7 +30,6 @@ def fasta_read(fastafile):
                                 if char not in ADN_LIST:
                                     print( char  + " It's not a nucl in line " + str(counter) +
                                     " and column " + str(column_counter)+ " for sequence "+header[1:])
-                                    
     else : 
         print("Error this is not a fasta file")
                     
