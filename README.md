@@ -1,10 +1,11 @@
 # Tp2_GL
 #encoding : utf8
-"""fasta file control."""
+"""Mamitiana."""
 import sys
 import os
 ADN_LIST=("A","C","G","T")
 def fasta_read(fastafile):
+    """fasta file control."""
     extension = os.path.splitext(fastafile) #verification de l'extension
     if extension == '.fasta':
         with open(fastafile,"r") as file:
