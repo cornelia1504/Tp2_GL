@@ -1,4 +1,5 @@
 # Tp2_GL
+#encoding : utf8
 import sys
 import os
 ADN_LIST=("A","C","G","T")
