@@ -32,7 +32,8 @@ def fasta_read(fastafile):
                                     " and column " + str(column_counter)+ " for sequence "+header[1:])
     else : 
         print("Error this is not a fasta file")
-                    
+        
+if __name__ == "__main__" :                   
 for arg in sys.argv[1:]:
     if os.path.exists(arg) is True :
         fasta_read(arg)
