@@ -7,17 +7,18 @@ ADN_LIST=("A","C","G","T")
 def fasta_read(fastafile):
     """fasta file control."""
     extension = os.path.splitext(fastafile) #verification de l'extension
-    if extension == '.fasta':
+    if extension == '.fasta' or '.fa':
         with open(fastafile,"r") as file:
             lines = file.readlines()
             print(lines)
-            str_fasta = ' '.join(lines)
+            chaine_fasta = ' '.join(lines)
             counter = 0
             header = "" 
-        prefix = ">" # Verification du contenu du fichier FASTA
-        for i, prefix in enumerate(prefix):
-            if str_fasta[i] != prefix[i]:
-                print("Error this is not a fasta file")
+            prefix = ">" # Verification du contenu du fichier FASTA
+            for i , prefix in enumerate(prefix):
+                if chaine_fasta[i] != prefix[i]:
+                    print("ErroR this is not a fasta file")
+                    break
             else:
                 for line in lines:
                     counter += 1
@@ -31,16 +32,17 @@ def fasta_read(fastafile):
                             column_counter += 1
                             if char not in ADN_LIST:
                                 print( char  + " It's not a nucl in line " + str(counter) +
-                                " and column " + str(column_counter)+ " for sequence "+header[1:])
+                                " and column " + str(column_counter)+ " for sequence "+header[1:])                                   
     else : 
         print("Error this is not a fasta file")
         
 if __name__ == "__main__" :                   
     for arg in sys.argv[1:]:
-        if os.path.exists(arg) :
+        if os.path.exists(arg):
             fasta_read(arg)
         else:
             print(arg + "file doesn't exist")
+    
     
     
     
