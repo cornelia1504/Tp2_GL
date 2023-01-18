@@ -1,5 +1,6 @@
 # Tp2_GL
 #encoding : utf8
+"""fasta file control."""
 import sys
 import os
 ADN_LIST=("A","C","G","T")
@@ -9,12 +10,12 @@ def fasta_read(fastafile):
         with open(fastafile,"r") as file:
             lines = file.readlines()
             print(lines)
-            chaine_fasta = ' '.join(lines)
+            str_fasta = ' '.join(lines)
             counter = 0
             header = "" 
         prefix = ">" # Verification du contenu du fichier FASTA
         for i in range(len(prefix)):
-            if chaine_fasta[i] != prefix[i]:
+            if str_fasta[i] != prefix[i]:
                 print("Error this is not a fasta file")
             else:
                 for line in lines:
@@ -35,7 +36,7 @@ def fasta_read(fastafile):
         
 if __name__ == "__main__" :                   
     for arg in sys.argv[1:]:
-        if os.path.exists(arg) is True :
+        if os.path.exists(arg) :
             fasta_read(arg)
         else:
             print(arg + "file doesn't exist")
