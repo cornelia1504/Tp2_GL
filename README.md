@@ -7,7 +7,7 @@ ADN_LIST=("A","C","G","T")
 def fasta_read(fastafile):
     """fasta file control."""
     extension = os.path.splitext(fastafile) #verification de l'extension
-    if extension == '.fasta' or '.fa':
+    if extension == '.fasta':
         with open(fastafile,"r") as file:
             lines = file.readlines()
             print(lines)
@@ -42,8 +42,3 @@ if __name__ == "__main__" :
             fasta_read(arg)
         else:
             print(arg + "file doesn't exist")
-    
-    
-    
-    
-
