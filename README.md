@@ -14,7 +14,7 @@ def fasta_read(fastafile):
             counter = 0
             header = "" 
         prefix = ">" # Verification du contenu du fichier FASTA
-        for i in range(len(prefix)):
+        for i, prefix in enumerate(prefix):
             if str_fasta[i] != prefix[i]:
                 print("Error this is not a fasta file")
             else:
@@ -40,6 +40,7 @@ if __name__ == "__main__" :
             fasta_read(arg)
         else:
             print(arg + "file doesn't exist")
+    
     
     
 
